@@ -17,7 +17,7 @@
   tags: [always]
 
 - import_tasks: install_apt.yml
-  when: ansible_pkg_mgr == "apt"
+  when: ansible_pkg_mgr == "apt" and ansible_distribution_release != "bionic"
   tags: [postgresql, postgresql-install]
 
 - import_tasks: install_rhel.yml
